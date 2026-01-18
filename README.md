@@ -1,35 +1,63 @@
-### Privacy Policy for Airtable ID Extractor
+# Airtable ID Extractor
 
-**Effective Date:** January 16, 2026
+<p align="center">
+  <img src="icon.png" alt="Airtable ID Extractor Icon" width="128"/>
+</p>
 
-**1. Data Collection & Privacy**
-Airtable ID Extractor ("The Extension") is designed with privacy as a first principle. **We do not collect, store, transmit, or sell any of your personal data.**
-*   **No Remote Servers:** The Extension operates entirely client-side within your browser. No data is ever sent to external servers or third parties.
-*   **Local Storage:** The Extension uses your browser's local storage (`chrome.storage.local`) solely to remember your "Recent History" of visited Airtable links. This data stays on your device and can be cleared by you at any time.
+A powerful Chrome extension for developers and power users who work with the Airtable API. This tool automatically extracts **Base**, **Table**, **View**, **Field**, and **Record IDs** directly from your browser's URL bar or from pasted links.
 
-**2. Permissions Usage**
-The Extension requests the minimum permissions necessary to function:
-*   **Read/Write Clipboard:** Required to allow you to paste Airtable URLs for processing and to copy extracted IDs to your clipboard.
-*   **Storage:** Required to save your recent history of IDs locally on your device.
-*   **Host Permissions:** Required to detect when you are visiting an Airtable page to automatically extract the relevant IDs for you.
+## 🚀 Features
 
-**3. Third-Party Services**
-The Extension does not integrate with any third-party tracking, analytics, or advertising services.
+*   **Instant Extraction**: Automatically detects and displays IDs when you visit any Airtable page.
+*   **Detailed ID Support**: Extracts:
+    *   **Base ID** (`app...`)
+    *   **Table ID** (`tbl...`)
+    *   **View ID** (`viw...`)
+    *   **Field ID** (`fld...` - often hidden in URL queries)
+    *   **Record ID** (`rec...` - from expanded records)
+*   **Clipboard Paster**: Paste any Airtable URL directly into the extension to extract IDs without needing to visit the page.
+*   **Smart History**: Keeps a local history of your recently visited bases and views, including their names (parsed from the page title).
+*   **One-Click Copy**: Copy any ID instantly with a single click.
+*   **Zero-Config**: Works immediately upon installation.
 
-**4. Contact**
-If you have any questions about this policy, please contact us at: **help@misterkhan.com**
+## 📦 Installation
 
----
+Since this is a developer extension, you can install it manually in Chrome:
 
-## ⚖️ Terms and Conditions
+1.  Clone or download this repository.
+2.  Open Chrome and navigate to `chrome://extensions/`.
+3.  Enable **Developer mode** in the top right corner.
+4.  Click **Load unpacked**.
+5.  Select the folder containing this extension's files.
 
-### Terms of Service
+## 🛠 Usage
 
-**1. Usage**
-By installing Airtable ID Extractor, you agree to use it for its intended purpose of extracting productivity IDs. You may not use the extension for any illegal or unauthorized purpose.
+### On an Airtable Page
+1.  Navigate to any Airtable base or view.
+2.  Click the extension icon in your browser toolbar.
+3.  The relevant IDs for the current view will be listed immediately.
+4.  Click the **Copy** button next to any ID to use it.
 
-**2. Disclaimer**
-The Extension is provided "as is," without warranty of any kind, express or implied. The developer (Mister Khan) makes no guarantees regarding the accuracy of the extracted data and shall not be held liable for any damages resulting from the use of this software.
+### Using the Clipboard
+1.  Copy an Airtable URL from anywhere (Slack, Email, Docs).
+2.  Open the extension popup.
+3.  Click the **Paste URL** button.
+4.  The extension will parse the IDs from the clipboard link and display them.
 
-**3. Intellectual Property**
-Airtable® is a registered trademark of Airtable, Inc. This extension is an independent tool developed by Mister Khan and is not affiliated with, endorsed by, or connected to Airtable, Inc.
+### History
+The extension automatically saves a local history of IDs you've encountered. Scroll down in the popup to see previous bases and views you've visited, along with their names.
+
+## 🔒 Privacy & Permissions
+
+This extension is designed with privacy in mind.
+
+*   **`https://airtable.com/*`**: Required to read the URL and page title of Airtable tabs to extract IDs and Names.
+*   **`clipboardRead`**: Required to allow you to paste URLs into the extension.
+*   **`clipboardWrite`**: Required to copy IDs to your clipboard.
+*   **`storage`**: Used to save your ID history locally on your device.
+
+**No data is ever sent to external servers.** All processing happens locally in your browser.
+
+## 📝 License
+
+[MIT](LICENSE)
