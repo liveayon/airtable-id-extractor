@@ -1,1 +1,0 @@
-[2026-01-18 20:56:39] airtable-id-extractor-v3.0@main 4ee3a8f 🚀 feat: add background and content scripts for Airtable integration 🟨
