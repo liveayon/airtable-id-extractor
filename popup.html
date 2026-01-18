@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="UTF-8">
+  <link rel="stylesheet" href="popup.css">
+</head>
+
+<body>
+  <!-- Header -->
+  <header>
+    <div style="display:flex; align-items:center; gap:12px;">
+      <img src="icon.png" class="logo" alt="Logo" />
+      <div>
+        <h1>Airtable ID Extractor</h1>
+        <div style="font-size:10px; color:#999; margin-top:2px;">
+          by <a href="https://misterkhan.com" target="_blank" style="color:#666; text-decoration:none;">Mister Khan</a>
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <main>
+    <!-- Paste Button -->
+    <button id="paste-btn" class="action-btn">
+      <span>📋 Paste new URL from Clipboard</span>
+    </button>
+
+    <!-- Current IDs Section -->
+    <div id="current-section">
+      <div class="section-title">Current Tab / Pasted Link</div>
+      <div id="id-list" class="card">
+        <!-- Items injected via JS -->
+        <div class="empty-state">No Airtable IDs found yet...</div>
+      </div>
+    </div>
+
+    <!-- History Section -->
+    <div id="history-section">
+      <div class="section-title">Recent History</div>
+      <div id="history-list" class="history-list">
+        <!-- History items injected via JS -->
+      </div>
+    </div>
+  </main>
+
+  <!-- Footer -->
+  <footer>
+    <a href="mailto:help@misterkhan.com">Help</a> •
+    <a href="https://misterkhan.com/extension/airtable-id-extractor/privacy-toc" target="_blank">Privacy</a>
+  </footer>
+
+  <!-- Toast Notification -->
+  <div id="toast" class="toast">Copied to clipboard!</div>
+
+  <script src="popup.js"></script>
+</body>
+
+</html>

@@ -1,0 +1,267 @@
+:root {
+    --primary-color: #2D3E50;
+    --accent-color: #18BFFF;
+    /* Airtable-ish blue */
+    --bg-color: #F7F9FC;
+    --card-bg: #FFFFFF;
+    --text-main: #333333;
+    --text-sub: #666666;
+    --border-radius: 8px;
+    --shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
+    --font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+}
+
+body {
+    font-family: var(--font-family);
+    background-color: var(--bg-color);
+    margin: 0;
+    padding: 0;
+    min-width: 360px;
+    /* SLightly wider */
+    color: var(--text-main);
+    box-sizing: border-box;
+}
+
+/* Header */
+header {
+    background: var(--card-bg);
+    padding: 16px;
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    border-bottom: 1px solid #EAEAEA;
+    box-shadow: 0 1px 4px rgba(0, 0, 0, 0.02);
+}
+
+.logo {
+    width: 24px;
+    height: 24px;
+}
+
+h1 {
+    font-size: 16px;
+    font-weight: 600;
+    margin: 0;
+    color: var(--primary-color);
+}
+
+/* Main Content */
+main {
+    padding: 16px;
+}
+
+/* Action Button (Paste) */
+.action-btn {
+    background-color: var(--accent-color);
+    color: white;
+    border: none;
+    width: 100%;
+    padding: 10px;
+    border-radius: var(--border-radius);
+    font-size: 14px;
+    font-weight: 500;
+    cursor: pointer;
+    transition: background-color 0.2s;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+    margin-bottom: 16px;
+}
+
+.action-btn:hover {
+    background-color: #0FA0D6;
+}
+
+.action-btn:active {
+    transform: translateY(1px);
+}
+
+/* Sections */
+.section-title {
+    font-size: 12px;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+    color: var(--text-sub);
+    margin-bottom: 8px;
+    font-weight: 600;
+}
+
+/* Cards (Current & History) */
+.card,
+.history-card {
+    background: var(--card-bg);
+    border-radius: var(--border-radius);
+    box-shadow: var(--shadow);
+    overflow: hidden;
+    margin-bottom: 16px;
+    border: 1px solid transparent;
+    transition: all 0.2s;
+}
+
+.history-card:hover {
+    border-color: #d0d0d0;
+}
+
+/* Shared Row Styles */
+.id-row,
+.history-row {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 8px 12px;
+    border-bottom: 1px solid #F0F0F0;
+    gap: 8px;
+}
+
+.id-row:last-child,
+.history-row:last-child {
+    border-bottom: none;
+}
+
+.id-row:hover,
+.history-row:hover {
+    background-color: #FAFCFF;
+}
+
+/* Labels */
+.id-label,
+.history-label {
+    font-size: 11px;
+    color: var(--text-sub);
+    font-weight: 500;
+    flex: 0 0 70px;
+    /* Fixed width for labels */
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+.history-label {
+    flex: 1;
+    /* In history, label might contain name, so let it grow if needed, or use specific structure */
+    max-width: 120px;
+}
+
+/* Values (IDs) */
+.id-value,
+.history-id-text {
+    font-family: 'Monaco', 'Consolas', monospace;
+    font-size: 11px;
+    color: var(--text-main);
+    background: #F4F5F7;
+    padding: 4px 6px;
+    border-radius: 4px;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    cursor: pointer;
+}
+
+.id-value {
+    flex: 1;
+    margin-right: 4px;
+}
+
+.history-id-text {
+    width: 100px;
+    text-align: right;
+}
+
+/* Copy Button */
+.copy-btn {
+    background: none;
+    border: 1px solid #eee;
+    cursor: pointer;
+    color: var(--accent-color);
+    padding: 3px 8px;
+    font-size: 10px;
+    font-weight: 600;
+    border-radius: 4px;
+    transition: all 0.2s;
+    white-space: nowrap;
+}
+
+.copy-btn:hover {
+    background-color: var(--accent-color);
+    color: white;
+    border-color: var(--accent-color);
+}
+
+/* Current Specific */
+#current-section .id-row {
+    padding: 12px 16px;
+}
+
+#current-section .id-value {
+    font-size: 12px;
+}
+
+/* History Specific Header */
+.history-header {
+    background: #f8f9fa;
+    padding: 8px 12px;
+    border-bottom: 1px solid #ebebeb;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.history-base-name {
+    font-size: 12px;
+    font-weight: 700;
+    color: var(--primary-color);
+}
+
+.history-time {
+    font-size: 10px;
+    color: #999;
+}
+
+/* Footer */
+footer {
+    text-align: center;
+    padding: 12px;
+    font-size: 11px;
+    color: #999;
+    background: #FAFAFA;
+    border-top: 1px solid #EAEAEA;
+}
+
+footer a {
+    color: #666;
+    text-decoration: none;
+}
+
+footer a:hover {
+    color: var(--accent-color);
+}
+
+/* Toast */
+.toast {
+    position: fixed;
+    bottom: 20px;
+    left: 50%;
+    transform: translateX(-50%);
+    background: #333;
+    color: white;
+    padding: 8px 16px;
+    border-radius: 20px;
+    font-size: 12px;
+    opacity: 0;
+    transition: opacity 0.3s;
+    pointer-events: none;
+    z-index: 100;
+}
+
+.toast.show {
+    opacity: 1;
+}
+
+.empty-state {
+    text-align: center;
+    padding: 20px;
+    color: var(--text-sub);
+    font-size: 13px;
+    font-style: italic;
+}
